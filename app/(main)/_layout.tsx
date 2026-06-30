@@ -1,33 +1,70 @@
-import { StyleSheet, View } from 'react-native';
-import { Tabs, TabList, TabSlot, TabTrigger } from 'expo-router/ui';
+import { SymbolView } from 'expo-symbols';
+import { Tabs } from 'expo-router';
 
-import { NavBar } from '@/components/NavBar';
+import Colors from '@/constants/Colors';
+import { useColorScheme } from '@/components/useColorScheme';
 
 export default function MainLayout() {
+  const colorScheme = useColorScheme();
+
   return (
-    <Tabs>
-      <View style={styles.container}>
-        <NavBar />
-        <TabSlot style={styles.content} />
-      </View>
-      <TabList style={styles.hiddenTabList}>
-        <TabTrigger name="home" href="/" />
-        <TabTrigger name="channels" href="/channels" />
-        <TabTrigger name="guide" href="/guide" />
-        <TabTrigger name="settings" href="/settings" />
-      </TabList>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: Colors[colorScheme].tint,
+      }}>
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Home',
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{ ios: 'house.fill', android: 'home', web: 'home' }}
+              tintColor={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="channels"
+        options={{
+          title: 'Channels',
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{ ios: 'tv.fill', android: 'live_tv', web: 'live_tv' }}
+              tintColor={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="guide"
+        options={{
+          title: 'Guide',
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{ ios: 'tv.and.mediabox.fill', android: 'tv_guide', web: 'tv_guide' }}
+              tintColor={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color }) => (
+            <SymbolView
+              name={{ ios: 'gear', android: 'settings', web: 'settings' }}
+              tintColor={color}
+              size={24}
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  content: {
-    flex: 1,
-  },
-  hiddenTabList: {
-    display: 'none',
-  },
-});
