@@ -1,0 +1,33 @@
+name: Build Android APK (Expo)
+
+on:
+  push:
+    branches:
+      - main # Cambia a master o tu rama principal si es diferente
+
+jobs:
+  build:
+    name: Install and Build APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Ajusta a la versión de Node que use tu proyecto
+          cache: 'npm' # Cambia a 'yarn' o 'pnpm' si usas otro gestor
+
+      - name: 🛠️ Setup EAS CLI
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: npm ci # Usa 'yarn install --immutable' si usas yarn
+
+      - name: 🚀 Build APK with EAS
+        run: eas build --platform android --profile preview --non-interactive
