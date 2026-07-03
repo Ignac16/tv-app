@@ -1,8 +1,8 @@
-import { SymbolView } from 'expo-symbols';
 import { Tabs } from 'expo-router';
+import { SymbolView } from 'expo-symbols';
 
-import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
+import Colors from '@/constants/Colors';
 
 export default function MainLayout() {
   const colorScheme = useColorScheme();
@@ -63,6 +63,12 @@ export default function MainLayout() {
               size={24}
             />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="player"
+        options={{
+          href: null,
         }}
       />
     </Tabs>
