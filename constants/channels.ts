@@ -45,7 +45,7 @@ export const channels: Channel[] = [
   {
     id: 'LaSexta.es',
     name: 'La Sexta',
-    logo: 'https://i.imgur.com/b59MxgM.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/LaSexta_HD_Logo_2016.png/960px-LaSexta_HD_Logo_2016.png',
     category: 'Spain',
     url: 'http://45.95.78.232:8001/udp/239.106.83.4:5000',
   },
@@ -237,6 +237,13 @@ export const channels: Channel[] = [
     logo: 'https://i.imgur.com/VUy8xIG.png',
     category: 'Spain',
     url: 'https://d1k3vzh2ivy22k.cloudfront.net/Historia.m3u8',
+  },
+  {
+    id: 'AXN.es',
+    name: 'AXN',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/AXN_logo_%282015%29.svg/960px-AXN_logo_%282015%29.svg.png',
+    category: 'Spain',
+    url: 'http://cdn.haititivi.com/AXN/index.m3u8',
   },
   {
     id: 'Squirrel.es',
@@ -467,7 +474,7 @@ export const channels: Channel[] = [
     name: 'GOL TV',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/GolTV.svg/1920px-GolTV.svg.png',
     category: 'Fútbol',
-    url: 'https://live2.eu-north-1a.cf.dmcdn.net/sec2(j8eIV2iPUkeRlpzi75yo16WTy8BO6Tu24VljdwnelP_Kb5qTic64cMmGERGQupzGDGiYSwBWVJVGLcJzeaZXdcjrBtLcj7_3ia7tK_2URXqipgNYH3DSlGrqc_OQbZju)/cloud/3/xa34sdg/d/live-720.m3u8',
+    url: 'http://23.237.104.106:8080/USA_GOLTV/index.m3u8',
   },
   {
     id: 'gol-classics.es',

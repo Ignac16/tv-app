@@ -1,6 +1,5 @@
 import { Text, View, useThemeColor } from '@/components/Themed';
 import { getCategories, getChannelsByCategory } from '@/constants/channels';
-import Colors from '@/constants/Colors';
 import { useRouter } from 'expo-router';
 import { Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -15,7 +14,7 @@ export default function ChannelsScreen() {
 
   const surfaceColor = useThemeColor({ light: '#fff', dark: '#1a1a1a' }, 'background');
   const borderColor = useThemeColor({ light: '#e0e0e0', dark: '#333' }, 'text');
-  const subtitleColor = useThemeColor({ light: '#666', dark: '#aaa' }, 'text');
+  const subtitleColor = useThemeColor({ light: '#666', dark: '#ccc' }, 'text'); // Lighter for dark mode
   const containerBackgroundColor = useThemeColor({ light: '#f5f5f5', dark: '#000' }, 'background');
   const channelItemBorderColor = useThemeColor({ light: '#f0f0f0', dark: '#222' }, 'text');
 

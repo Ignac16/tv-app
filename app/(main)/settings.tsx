@@ -1,29 +1,61 @@
 import { Text, View, useThemeColor } from '@/components/Themed';
-import { useColorSchemeManager } from '@/components/useColorScheme';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Switch, TouchableOpacity } from 'react-native';
 
+const COLOR_SCHEME_KEY = 'color_scheme';
+
+const getStoredScheme = (): 'light' | 'dark' | null => {
+  if (typeof window !== 'undefined') {
+    const stored = localStorage.getItem(COLOR_SCHEME_KEY);
+    if (stored === 'light' || stored === 'dark') {
+      return stored;
+    }
+  }
+  return null;
+};
+
+const setStoredScheme = (scheme: 'light' | 'dark' | null) => {
+  if (typeof window !== 'undefined') {
+    if (scheme === null) {
+      localStorage.removeItem(COLOR_SCHEME_KEY);
+    } else {
+      localStorage.setItem(COLOR_SCHEME_KEY, scheme);
+    }
+  }
+};
+
 export default function SettingsScreen() {
-  const { manualScheme, isLoading, setColorScheme } = useColorSchemeManager();
+  const [manualScheme, setManualScheme] = useState<'light' | 'dark' | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const surfaceColor = useThemeColor({ light: '#fff', dark: '#1a1a1a' }, 'background');
-  const subtitleColor = useThemeColor({ light: '#666', dark: '#aaa' }, 'text');
+  const subtitleColor = useThemeColor({ light: '#666', dark: '#ccc' }, 'text');
   const containerBackgroundColor = useThemeColor({ light: '#f5f5f5', dark: '#000' }, 'background');
+
+  useEffect(() => {
+    const stored = getStoredScheme();
+    setManualScheme(stored);
+    setIsLoading(false);
+  }, []);
 
   const isDarkMode = manualScheme === 'dark';
   const isSystem = manualScheme === null;
 
   const handleToggle = () => {
     if (isSystem) {
-      setColorScheme('dark');
+      setStoredScheme('dark');
+      setManualScheme('dark');
     } else if (isDarkMode) {
-      setColorScheme('light');
+      setStoredScheme('light');
+      setManualScheme('light');
     } else {
-      setColorScheme(null);
+      setStoredScheme(null);
+      setManualScheme(null);
     }
   };
 
   if (isLoading) {
     return (
-      <View style={styles.container}>
+      <View style={[styles.container, { backgroundColor: containerBackgroundColor }]}>
         <Text>Loading...</Text>
       </View>
     );
@@ -47,7 +79,10 @@ export default function SettingsScreen() {
       </View>
       <TouchableOpacity
         style={[styles.resetButton, { backgroundColor: surfaceColor }]}
-        onPress={() => setColorScheme(null)}
+        onPress={() => {
+          setStoredScheme(null);
+          setManualScheme(null);
+        }}
       >
         <Text style={styles.resetButtonText}>Use System Default</Text>
       </TouchableOpacity>

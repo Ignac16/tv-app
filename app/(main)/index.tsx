@@ -7,7 +7,7 @@ export default function HomeScreen() {
   const router = useRouter();
   const surfaceColor = useThemeColor({ light: '#fff', dark: '#1a1a1a' }, 'background');
   const borderColor = useThemeColor({ light: '#e0e0e0', dark: '#333' }, 'text');
-  const subtitleColor = useThemeColor({ light: '#666', dark: '#aaa' }, 'text');
+  const subtitleColor = useThemeColor({ light: '#666', dark: '#ccc' }, 'text'); // Lighter for dark mode
   const containerBackgroundColor = useThemeColor({ light: '#f5f5f5', dark: '#000' }, 'background');
 
   const handleChannelPress = (channelId: string) => {
