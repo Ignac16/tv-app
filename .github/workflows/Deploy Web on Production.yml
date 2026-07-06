@@ -1,8 +1,7 @@
 name: Deploy Web on Production
-
 on:
   push:
-    branches: [production]
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -12,10 +11,8 @@ concurrency:
 jobs:
   build-and-deploy-web:
     runs-on: ubuntu-latest
-    
     env:
       EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }} # yamllint disable-line
-    
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
