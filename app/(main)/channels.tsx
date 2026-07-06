@@ -1,9 +1,10 @@
+import { useChannels } from '@/components/ChannelContext';
 import { Text, View, useThemeColor } from '@/components/Themed';
-import { getCategories, getChannelsByCategory } from '@/constants/channels';
 import { useRouter } from 'expo-router';
 import { Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function ChannelsScreen() {
+  const { getCategories, getChannelsByCategory } = useChannels();
   const channelsByCategory = getChannelsByCategory();
   const categories = getCategories();
   const router = useRouter();

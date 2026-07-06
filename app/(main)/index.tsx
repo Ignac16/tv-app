@@ -1,9 +1,10 @@
+import { useChannels } from '@/components/ChannelContext';
 import { Text, View, useThemeColor } from '@/components/Themed';
-import { channels } from '@/constants/channels';
 import { useRouter } from 'expo-router';
 import { Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function HomeScreen() {
+  const { channels } = useChannels();
   const router = useRouter();
   const surfaceColor = useThemeColor({ light: '#fff', dark: '#1a1a1a' }, 'background');
   const borderColor = useThemeColor({ light: '#e0e0e0', dark: '#333' }, 'text');

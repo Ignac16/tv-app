@@ -1,4 +1,5 @@
-import { Channel, channels } from '@/constants/channels';
+import { useChannels } from '@/components/ChannelContext';
+import { Channel } from '@/constants/channels';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -44,6 +45,7 @@ declare global {
 
 export default function PlayerScreen() {
   const { channelId } = useLocalSearchParams<{ channelId: string }>();
+  const { channels } = useChannels();
   const router = useRouter();
   const [channel, setChannel] = useState<Channel | null>(null);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -63,7 +65,7 @@ export default function PlayerScreen() {
       Alert.alert('Error', 'Channel not found');
       router.back();
     }
-  }, [channelId]);
+  }, [channelId, channels]);
 
   useEffect(() => {
     // Load hls.js dynamically

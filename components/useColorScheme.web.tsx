@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 
 const COLOR_SCHEME_KEY = 'color_scheme';
 
@@ -78,5 +78,8 @@ export const useColorSchemeManager = () => {
     throw new Error('useColorSchemeManager must be used within a ColorSchemeProvider');
   }
   return {
-    manualScheme: context.manualScheme, isLoading: context.isLoading, setColorScheme: context.setColorScheme };
+    manualScheme: context.manualScheme,
+    isLoading: context.isLoading,
+    setColorScheme: context.setColorScheme
+  };
 };

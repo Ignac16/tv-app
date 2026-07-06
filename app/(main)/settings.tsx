@@ -1,55 +1,27 @@
+import { useColorSchemeManager } from '@/components/useColorScheme';
 import { Text, View, useThemeColor } from '@/components/Themed';
-import { useEffect, useState } from 'react';
 import { StyleSheet, Switch, TouchableOpacity } from 'react-native';
-
-const COLOR_SCHEME_KEY = 'color_scheme';
-
-const getStoredScheme = (): 'light' | 'dark' | null => {
-  if (typeof window !== 'undefined') {
-    const stored = localStorage.getItem(COLOR_SCHEME_KEY);
-    if (stored === 'light' || stored === 'dark') {
-      return stored;
-    }
-  }
-  return null;
-};
-
-const setStoredScheme = (scheme: 'light' | 'dark' | null) => {
-  if (typeof window !== 'undefined') {
-    if (scheme === null) {
-      localStorage.removeItem(COLOR_SCHEME_KEY);
-    } else {
-      localStorage.setItem(COLOR_SCHEME_KEY, scheme);
-    }
-  }
-};
+import { useRouter } from 'expo-router';
 
 export default function SettingsScreen() {
-  const [manualScheme, setManualScheme] = useState<'light' | 'dark' | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const { manualScheme, isLoading, setColorScheme } = useColorSchemeManager();
+  const router = useRouter();
   const surfaceColor = useThemeColor({ light: '#fff', dark: '#1a1a1a' }, 'background');
   const subtitleColor = useThemeColor({ light: '#666', dark: '#ccc' }, 'text');
   const containerBackgroundColor = useThemeColor({ light: '#f5f5f5', dark: '#000' }, 'background');
-
-  useEffect(() => {
-    const stored = getStoredScheme();
-    setManualScheme(stored);
-    setIsLoading(false);
-  }, []);
+  const tintColor = useThemeColor({ light: '#2f95dc', dark: '#fff' }, 'tint');
+  const adminButtonBg = useThemeColor({ light: '#2f95dc', dark: '#1a73e8' }, 'tint');
 
   const isDarkMode = manualScheme === 'dark';
   const isSystem = manualScheme === null;
 
   const handleToggle = () => {
     if (isSystem) {
-      setStoredScheme('dark');
-      setManualScheme('dark');
+      setColorScheme('dark');
     } else if (isDarkMode) {
-      setStoredScheme('light');
-      setManualScheme('light');
+      setColorScheme('light');
     } else {
-      setStoredScheme(null);
-      setManualScheme(null);
+      setColorScheme(null);
     }
   };
 
@@ -79,12 +51,15 @@ export default function SettingsScreen() {
       </View>
       <TouchableOpacity
         style={[styles.resetButton, { backgroundColor: surfaceColor }]}
-        onPress={() => {
-          setStoredScheme(null);
-          setManualScheme(null);
-        }}
+        onPress={() => setColorScheme(null)}
       >
-        <Text style={styles.resetButtonText}>Use System Default</Text>
+        <Text style={[styles.resetButtonText, { color: tintColor }]}>Use System Default</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[styles.adminButton, { backgroundColor: adminButtonBg }]}
+        onPress={() => router.push('/admin-login')}
+      >
+        <Text style={styles.adminButtonText}>Admin Panel Login</Text>
       </TouchableOpacity>
     </View>
   );
@@ -122,7 +97,17 @@ const styles = StyleSheet.create({
   },
   resetButtonText: {
     fontSize: 16,
-    color: '#2f95dc',
+    fontWeight: '600',
+  },
+  adminButton: {
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  adminButtonText: {
+    fontSize: 16,
+    color: '#fff',
     fontWeight: '600',
   },
 });

@@ -41,7 +41,9 @@ export default function RootLayout() {
 
   return (
     <ColorSchemeProvider>
-      <RootLayoutNav />
+      <ChannelProvider>
+        <RootLayoutNav />
+      </ChannelProvider>
     </ColorSchemeProvider>
   );
 }
