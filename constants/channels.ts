@@ -87,7 +87,7 @@ export const channels: Channel[] = [
   {
     id: 'Nova.es',
     name: 'Nova',
-    logo: 'https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/spain/nova-es.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Nova.svg/960px-Nova.svg.png',
     category: 'Spain',
     url: 'http://40.160.24.55/Nova/index.m3u8',
   },
@@ -101,7 +101,7 @@ export const channels: Channel[] = [
   {
     id: 'Atreseries.es',
     name: 'Atreseries',
-    logo: 'https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/spain/atreseries-es.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Atreseries_2020_logo.svg/960px-Atreseries_2020_logo.svg.png',
     category: 'Spain',
     url: 'http://45.95.78.232:8001/udp/239.106.85.4:5000',
   },
@@ -129,7 +129,7 @@ export const channels: Channel[] = [
   {
     id: 'Energy.es',
     name: 'Energy',
-    logo: 'https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/spain/energy-es.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Energy_2012.png',
     category: 'Spain',
     url: 'http://45.95.78.232:8001/udp/239.106.84.4:5000',
   },
@@ -283,7 +283,7 @@ export const channels: Channel[] = [
   {
     id: 'CanalSurAndalucia.es',
     name: 'Canal Sur Andalucía',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/CanalSur1.svg/960px-CanalSur1.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Canal_Sur_Andaluc%C3%ADa_SAT.png/960px-Canal_Sur_Andaluc%C3%ADa_SAT.png',
     category: 'Spain',
     url: 'https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8',
   },
@@ -297,7 +297,7 @@ export const channels: Channel[] = [
   {
     id: 'TENCanal10.hn',
     name: 'TEN',
-    logo: 'https://i.imgur.com/HQiKyHy.jpg',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/TEN_2024_Logo.svg/960px-TEN_2024_Logo.svg.png',
     category: 'Spain',
     url: 'http://45.95.78.232:8001/udp/239.106.85.2:5000',
   },

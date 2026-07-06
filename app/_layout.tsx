@@ -6,6 +6,7 @@ import 'react-native-reanimated';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { ColorSchemeProvider, useColorScheme } from '@/components/useColorScheme';
+import { ChannelProvider } from '@/components/ChannelContext';
 
 export {
   // Catch any errors thrown by the Layout component.
