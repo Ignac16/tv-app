@@ -241,7 +241,7 @@ export const channels: Channel[] = [
   {
     id: 'AMC.es',
     name: 'AMC',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/AMC_logo_2019.svg/960px-AMC_logo_2019.svg.png',
+    logo: 'https://raw.githubusercontent.com/davidmuma/picons_dobleM/refs/heads/master/icon/AMC.png',
     category: 'Spain',
     url: 'http://vegafibratv.com:8085/AMC/index.m3u8',
   },
@@ -362,7 +362,7 @@ export const channels: Channel[] = [
     name: 'ETB2',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/ETB2_2022_logo.svg/960px-ETB2_2022_logo.svg.png',
     category: 'Spain',
-    url: 'https://multimedia.eitb.eus/live-content/etb2hd-hls/master.m3u8',
+    url: 'https://cdn1.etbon.eus/etb2/index.mpd',
   },
   {
     id: 'TV3.es',
@@ -418,7 +418,7 @@ export const channels: Channel[] = [
     name: 'Canal TE24',
     logo: 'https://i.ibb.co/3ynghbW/logox2.png',
     category: 'Spain',
-    url: 'https://ingest1-video.streaming-pro.com/esportsteABR/etestream/playlist.m3u8',
+    url: 'https://ingest1-video.streaming-pro.com/canalteABR/ctestream/playlist.m3u8',
   },
   {
     id: 'APunt.es',
@@ -486,7 +486,7 @@ export const channels: Channel[] = [
   {
     id: 'gol.es',
     name: 'GOL TV',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/GolTV.svg/1920px-GolTV.svg.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Gol.svg/960px-Gol.svg.png',
     category: 'Fútbol',
     url: 'http://23.237.104.106:8080/USA_GOLTV/index.m3u8',
   },
