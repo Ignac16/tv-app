@@ -10,6 +10,7 @@ export default function HomeScreen() {
   const borderColor = useThemeColor({ light: '#e0e0e0', dark: '#333' }, 'text');
   const subtitleColor = useThemeColor({ light: '#666', dark: '#ccc' }, 'text'); // Lighter for dark mode
   const containerBackgroundColor = useThemeColor({ light: '#f5f5f5', dark: '#000' }, 'background');
+  const textColor = useThemeColor({ light: '#000', dark: '#fff' }, 'text');
 
   const handleChannelPress = (channelId: string) => {
     router.push(`/player?channelId=${channelId}`);
@@ -18,8 +19,17 @@ export default function HomeScreen() {
   return (
     <ScrollView style={[styles.container, { backgroundColor: containerBackgroundColor }]}>
       <View style={[styles.header, { backgroundColor: surfaceColor, borderBottomColor: borderColor }]}>
-        <Text style={styles.headerTitle}>Spanish TV Channels</Text>
-        <Text style={[styles.headerSubtitle, { color: subtitleColor }]}>Available channels from playlist</Text>
+        <View style={styles.headerContent}>
+          <Image 
+            source={require('@/assets/images/icon.png')} 
+            style={styles.appIcon}
+            resizeMode="contain"
+          />
+          <View style={styles.headerTextContainer}>
+            <Text style={[styles.headerTitle, { color: textColor }]}>Spanish TV Channels</Text>
+            <Text style={[styles.headerSubtitle, { color: subtitleColor }]}>Available channels from playlist</Text>
+          </View>
+        </View>
       </View>
       <View style={styles.channelsGrid}>
         {channels.map((channel) => (
@@ -29,7 +39,7 @@ export default function HomeScreen() {
             onPress={() => handleChannelPress(channel.id)}
           >
             <Image source={{ uri: channel.logo }} style={styles.channelLogo} resizeMode="contain" />
-            <Text style={styles.channelName}>{channel.name}</Text>
+            <Text style={[styles.channelName, { color: textColor }]}>{channel.name}</Text>
             <Text style={[styles.channelCategory, { color: subtitleColor }]}>{channel.category}</Text>
           </TouchableOpacity>
         ))}
@@ -45,6 +55,18 @@ const styles = StyleSheet.create({
   header: {
     padding: 20,
     borderBottomWidth: 1,
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  appIcon: {
+    width: 50,
+    height: 50,
+    marginRight: 15,
+  },
+  headerTextContainer: {
+    flex: 1,
   },
   headerTitle: {
     fontSize: 24,

@@ -24,9 +24,9 @@ export const channels: Channel[] = [
   {
     id: 'Antena3.es',
     name: 'Antena 3',
-    logo: 'https://i.imgur.com/j3SP4BS.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Logo_Antena_3_2025_%28Naranja%29.svg/960px-Logo_Antena_3_2025_%28Naranja%29.svg.png',
     category: 'Spain',
-    url: 'http://45.95.78.232:8001/udp/239.106.83.1:5000',
+    url: 'http://177.10.184.193:8000/play/a06a/index.m3u8',
   },
   {
     id: 'Cuatro.es',
@@ -113,13 +113,6 @@ export const channels: Channel[] = [
     url: 'http://45.95.78.232:8001/udp/239.106.83.7:5000',
   },
   {
-    id: 'TRECE.es',
-    name: 'TRECE',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Trece.svg/960px-Trece.svg.png',
-    category: 'Spain',
-    url: 'http://45.95.78.232:8001/udp/239.106.84.7:5000',
-  },
-  {
     id: 'Divinity.es',
     name: 'Divinity',
     logo: 'https://i.imgur.com/o7fvEr6.png',
@@ -132,6 +125,34 @@ export const channels: Channel[] = [
     logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Energy_2012.png',
     category: 'Spain',
     url: 'http://45.95.78.232:8001/udp/239.106.84.4:5000',
+  },
+  {
+    id: 'TENespaña.es',
+    name: 'TEN',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/TEN_2024_Logo.svg/960px-TEN_2024_Logo.svg.png',
+    category: 'Spain',
+    url: 'http://45.95.78.232:8001/udp/239.106.85.2:5000',
+  },
+  {
+    id: '9Dkiss.es',
+    name: 'DKISS',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/DKISS_2019_logo.svg/960px-DKISS_2019_logo.svg.png',
+    category: 'Spain',
+    url: 'http://45.95.78.232:8001/udp/239.106.85.2:5000',
+  },
+  {
+    id: '9Dmax.es',
+    name: 'DMAX',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/DMAX_UK_2026_Logo.svg/960px-DMAX_UK_2026_Logo.svg.png',
+    category: 'Spain',
+    url: 'http://45.95.78.232:8001/udp/239.106.85.2:5000',
+  },
+  {
+    id: 'TRECE.es',
+    name: 'TRECE',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Trece.svg/960px-Trece.svg.png',
+    category: 'Spain',
+    url: 'http://45.95.78.232:8001/udp/239.106.84.7:5000',
   },
   {
     id: 'Boing.es',
@@ -206,7 +227,7 @@ export const channels: Channel[] = [
   {
     id: 'NegociosTV.es',
     name: 'Negocios',
-    logo: 'https://pbs.twimg.com/profile_images/1321367703731523584/bNMmbetI_200x200.jpg',
+    logo: 'https://m.media-amazon.com/images/I/21HEgSJn2gL._h1_.png',
     category: 'Spain',
     url: 'https://streaming013.gestec-video.com/hls/negociostv.m3u8',
   },
@@ -283,7 +304,7 @@ export const channels: Channel[] = [
   {
     id: 'CanalSurAndalucia.es',
     name: 'Canal Sur Andalucía',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Canal_Sur_Andaluc%C3%ADa_SAT.png/960px-Canal_Sur_Andaluc%C3%ADa_SAT.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/CanalSur_Andaluc%C3%ADa.png',
     category: 'Spain',
     url: 'https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8',
   },
@@ -295,14 +316,7 @@ export const channels: Channel[] = [
     url: 'https://cdnlive.codev8.net/rtvalive/smil:channel22.smil/playlist.m3u8',
   },
   {
-    id: 'TENCanal10.hn',
-    name: 'TEN',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/TEN_2024_Logo.svg/960px-TEN_2024_Logo.svg.png',
-    category: 'Spain',
-    url: 'http://45.95.78.232:8001/udp/239.106.85.2:5000',
-  },
-  {
-    id: 'La8Mediterraneo.es',
+      id: 'La8Mediterraneo.es',
     name: 'La 8 Mediterráneo',
     logo: 'https://graph.facebook.com/la8mediterraneo/picture?width=200&height=200',
     category: 'Spain',
@@ -332,7 +346,7 @@ export const channels: Channel[] = [
   {
     id: 'AragonTV.es',
     name: 'Aragón TV',
-    logo: 'https://i.imgur.com/8H3Q07b.png',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Logo_aragon_tv_2016.png/960px-Logo_aragon_tv_2016.png',
     category: 'Spain',
     url: 'https://streamer95.server.aranova.cloud/clsdvr/live/aragontv_canal1/index.m3u8?vv=ES&h=grSocEHte5dddpuRxF1MbQ&e=31373831303035343530&r=2345',
   },
@@ -341,7 +355,7 @@ export const channels: Channel[] = [
     name: 'ETB1',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/ETB1_2022_logo.svg/960px-ETB1_2022_logo.svg.png',
     category: 'Spain',
-    url: 'https://multimedia.eitb.eus/live-content/etb1hd-hls/master.m3u8',
+    url: 'https://cdn1.etbon.eus/etb1/index.mpd',
   },
   {
     id: 'ETB2.es',
@@ -374,7 +388,7 @@ export const channels: Channel[] = [
   {
     id: 'BonDiaTV.es',
     name: 'Bon Dia',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Logo_Bon_Dia_TV.png',
+    logo: 'https://directostv.teleame.com/wp-content/uploads/2018/04/Bon-Dia-TV-en-DIRECTO-Online-en-vivo.png',
     category: 'Spain',
     url: 'https://directes-tv-int.3catdirectes.cat/live-content/bondia-hls/master.m3u8',
   },

@@ -54,6 +54,7 @@ export default function PlayerScreen() {
   const [showAudioMenu, setShowAudioMenu] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const hlsRef = useRef<any>(null);
+  const dashRef = useRef<any>(null);
 
   useEffect(() => {
     const foundChannel = channels.find((ch) => ch.id === channelId);
@@ -68,39 +69,82 @@ export default function PlayerScreen() {
   }, [channelId, channels]);
 
   useEffect(() => {
-    // Load hls.js dynamically
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js';
-    script.async = true;
-    script.onload = () => {
-      if (channel && videoRef.current) {
-        const video = videoRef.current;
-        
-        // Check if HLS.js is needed
-        if (channel.url.includes('.m3u8')) {
-          if (typeof (window as any).Hls !== 'undefined') {
-            const hls = new (window as any).Hls();
-            hls.loadSource(channel.url);
-            hls.attachMedia(video);
-            hlsRef.current = hls;
+    if (!channel || !videoRef.current) return;
 
-            hls.on((window as any).Hls.Events.MANIFEST_PARSED, () => {
-              const tracks = hls.audioTracks;
-              setAudioTracks(tracks);
-              setCurrentAudioTrack(hls.audioTrack);
-            });
-          }
-        } else {
-          video.src = channel.url;
-        }
+    const video = videoRef.current;
+    const url = channel.url;
+
+    // Load hls.js dynamically
+    const hlsScript = document.createElement('script');
+    hlsScript.src = 'https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js';
+    hlsScript.async = true;
+
+    // Load dash.js dynamically
+    const dashScript = document.createElement('script');
+    dashScript.src = 'https://cdn.dashjs.org/latest/dash.all.min.js';
+    dashScript.async = true;
+
+    let scriptsLoaded = 0;
+    const checkScripts = () => {
+      scriptsLoaded++;
+      if (scriptsLoaded === 2) {
+        initializePlayer();
       }
     };
-    document.head.appendChild(script);
+
+    hlsScript.onload = checkScripts;
+    dashScript.onload = checkScripts;
+
+    const initializePlayer = () => {
+      if (url.includes('.m3u8')) {
+        // HLS playback
+        if (typeof (window as any).Hls !== 'undefined') {
+          const hls = new (window as any).Hls();
+          hls.loadSource(url);
+          hls.attachMedia(video);
+          hlsRef.current = hls;
+
+          hls.on((window as any).Hls.Events.MANIFEST_PARSED, () => {
+            const tracks = hls.audioTracks;
+            setAudioTracks(tracks);
+            setCurrentAudioTrack(hls.audioTrack);
+          });
+        }
+      } else if (url.includes('.mpd')) {
+        // DASH playback
+        if (typeof (window as any).dashjs !== 'undefined') {
+          const dash = (window as any).dashjs.MediaPlayer().create();
+          dash.initialize(video, url, false);
+          dashRef.current = dash;
+
+          dash.on((window as any).dashjs.MediaPlayer.events.STREAM_INITIALIZED, () => {
+            const audioTracks = dash.getTracksFor('audio');
+            setAudioTracks(audioTracks);
+            const currentTrack = dash.getCurrentTrackFor('audio');
+            setCurrentAudioTrack(currentTrack ? currentTrack.index : -1);
+          });
+        }
+      } else {
+        // Direct playback
+        video.src = url;
+      }
+    };
+
+    document.head.appendChild(hlsScript);
+    document.head.appendChild(dashScript);
 
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(hlsScript)) {
+        document.head.removeChild(hlsScript);
+      }
+      if (document.head.contains(dashScript)) {
+        document.head.removeChild(dashScript);
+      }
       if (hlsRef.current) {
         hlsRef.current.destroy();
+      }
+      if (dashRef.current) {
+        dashRef.current.reset();
       }
     };
   }, [channel]);
@@ -116,9 +160,19 @@ export default function PlayerScreen() {
 
   const handleAudioTrackChange = (trackId: number) => {
     if (hlsRef.current) {
+      // HLS audio track switching
       hlsRef.current.audioTrack = trackId;
       setCurrentAudioTrack(trackId);
       setShowAudioMenu(false);
+    } else if (dashRef.current) {
+      // DASH audio track switching
+      const audioTracks = dashRef.current.getTracksFor('audio');
+      const track = audioTracks.find((t: any) => t.index === trackId);
+      if (track) {
+        dashRef.current.setCurrentTrack(track);
+        setCurrentAudioTrack(trackId);
+        setShowAudioMenu(false);
+      }
     }
   };
 
@@ -155,15 +209,15 @@ export default function PlayerScreen() {
           {audioTracks.map((track, index) => (
             <TouchableOpacity
               key={index}
-              onPress={() => handleAudioTrackChange(track.id)}
+              onPress={() => handleAudioTrackChange(track.id !== undefined ? track.id : track.index)}
               style={[
                 styles.audioMenuItem,
-                currentAudioTrack === track.id && styles.audioMenuItemActive
+                (currentAudioTrack === track.id || currentAudioTrack === track.index) && styles.audioMenuItemActive
               ]}
             >
               <Text style={styles.audioMenuItemText}>
-                {track.name || `Track ${index + 1}`}
-                {track.lang && ` (${track.lang})`}
+                {track.name || track.lang || `Track ${index + 1}`}
+                {track.lang && track.name && ` (${track.lang})`}
               </Text>
             </TouchableOpacity>
           ))}
