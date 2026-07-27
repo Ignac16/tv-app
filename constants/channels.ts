@@ -215,7 +215,7 @@ export const channels: Channel[] = [
     name: 'El País',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/El_Pais_logo_2007.svg/960px-El_Pais_logo_2007.svg.png',
     category: 'Spain',
-    url: 'https://d2epgk1fomaa1g.cloudfront.net/v1/manifest/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-9n8y4tw0bk3an/cb9a779f-4b18-4c54-a948-291d8a1cc8ea/0.m3u8',
+    url: 'https://elpais-tivify.ssai.tcscdn.net/playlist_0.m3u8',
   },
   {
     id: 'Qwesttv.us',
