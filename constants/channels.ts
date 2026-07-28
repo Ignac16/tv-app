@@ -341,7 +341,8 @@ export const channels: Channel[] = [
     name: 'Canal Extremadura',
     logo: 'https://i.imgur.com/xBeywIA.png',
     category: 'Spain',
-    url: 'http://45.95.78.232:8001/udp/239.106.90.6:5000',
+    url: 'https://d2ymuyhevki1a1.cloudfront.net/wct-ddd2992e-86fc-4611-a491-7f392259e9ba/continuous/9be76611-d2cd-474d-bf19-ef702ba31b02/1080p_5M_25fps_aac_128k.m3u8
+',
   },
   {
     id: 'AragonTV.es',
