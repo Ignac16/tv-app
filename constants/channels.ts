@@ -320,7 +320,7 @@ export const channels: Channel[] = [
     name: 'La 8 Mediterráneo',
     logo: 'https://graph.facebook.com/la8mediterraneo/picture?width=200&height=200',
     category: 'Spain',
-    url: 'http://45.95.78.232:8001/udp/239.106.91.2:5000',
+    url: 'https://newscript.gestec-video.com/hls/8TVEVENTOS.m3u8',
   },
   {
     id: 'TVCanaria.es',
