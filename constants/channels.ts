@@ -355,14 +355,14 @@ export const channels: Channel[] = [
     name: 'ETB1',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/ETB1_2022_logo.svg/960px-ETB1_2022_logo.svg.png',
     category: 'Spain',
-    url: 'https://cdn1.etbon.eus/etb1/index.mpd',
+    url: 'https://cdn1.etbon.eus/etb1/index.m3u8',
   },
   {
     id: 'ETB2.es',
     name: 'ETB2',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/ETB2_2022_logo.svg/960px-ETB2_2022_logo.svg.png',
     category: 'Spain',
-    url: 'https://cdn1.etbon.eus/etb2/index.mpd',
+    url: 'https://cdn1.etbon.eus/etb2/index.m3u8',
   },
   {
     id: 'TV3.es',
