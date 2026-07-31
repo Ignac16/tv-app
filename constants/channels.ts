@@ -304,7 +304,7 @@ export const channels: Channel[] = [
   {
     id: 'CanalSurAndalucia.es',
     name: 'Canal Sur Andalucía',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/CanalSur_Andaluc%C3%ADa.png',
+    logo: 'https://media.tvup.cloud/canales/color_lg_5ee9fff71ce1aa005e15903a.png',
     category: 'Spain',
     url: 'https://dfk2a268yviz9.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ddiii1m6jt6of/CanalSurAndaluciaES.m3u8',
   },
@@ -341,8 +341,7 @@ export const channels: Channel[] = [
     name: 'Canal Extremadura',
     logo: 'https://i.imgur.com/xBeywIA.png',
     category: 'Spain',
-    url: 'https://d2ymuyhevki1a1.cloudfront.net/wct-ddd2992e-86fc-4611-a491-7f392259e9ba/continuous/9be76611-d2cd-474d-bf19-ef702ba31b02/1080p_5M_25fps_aac_128k.m3u8
-',
+    url: 'https://d2ymuyhevki1a1.cloudfront.net/wct-ddd2992e-86fc-4611-a491-7f392259e9ba/continuous/9be76611-d2cd-474d-bf19-ef702ba31b02/1080p_5M_25fps_aac_128k.m3u8',
   },
   {
     id: 'AragonTV.es',
