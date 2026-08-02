@@ -271,7 +271,7 @@ export const channels: Channel[] = [
     name: 'Squirrel',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Squirrel_TV_logo.svg/960px-Squirrel_TV_logo.svg.png',
     category: 'Spain',
-    url: 'http://45.95.78.232:8001/udp/239.106.84.2:5000',
+    url: 'https://tsw.streamingwebtv24.it:1936/inteccdn1/inteccdn1/playlist.m3u8',
   },
   {
     id: 'Squirrel2.es',
@@ -327,7 +327,7 @@ export const channels: Channel[] = [
     name: 'Televisión Canaria',
     logo: 'https://i.imgur.com/68LNS8e.png',
     category: 'Spain',
-    url: 'https://www.youtube.com/user/TelevisionCanaria/live',
+    url: 'https://d1oyt3v08gcy18.cloudfront.net/index-events.m3u8',
   },
   {
     id: 'IB3.es',
@@ -348,7 +348,7 @@ export const channels: Channel[] = [
     name: 'Aragón TV',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Logo_aragon_tv_2016.png/960px-Logo_aragon_tv_2016.png',
     category: 'Spain',
-    url: 'https://streamer95.server.aranova.cloud/clsdvr/live/aragontv_canal1/index.m3u8?vv=ES&h=grSocEHte5dddpuRxF1MbQ&e=31373831303035343530&r=2345',
+    url: 'https://cartv.streaming.aranova.es/hls/live/aragontv_canal1.m3u8',
   },
   {
     id: 'ETB1.es',
