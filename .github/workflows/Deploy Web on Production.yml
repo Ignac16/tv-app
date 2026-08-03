@@ -36,7 +36,7 @@ jobs:
 
       # Recuerda cambiar '14.0.0' por la versión de EAS CLI que uses tú
       - name: Instalar EAS CLI
-        run: npm install -g eas-cli@21.5.0
+        run: npm install -g eas-cli@21.4.0
 
       - name: Verificar autenticación Expo
         run: eas whoami
