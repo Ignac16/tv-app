@@ -505,7 +505,6 @@ export const channels: Channel[] = [
     url: 'https://d63fabad.wurl.com/manifest/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWVzX0ZJRkFQbHVzU3BhbmlzaF9ITFM/475815a2-3b11-4247-acdb-f76176329101/2.m3u8',
   },
 ];
-];
 
 export const getChannelsByCategory = (): Record<string, Channel[]> => {
   const grouped: Record<string, Channel[]> = {};
