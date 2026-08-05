@@ -201,7 +201,7 @@ export const channels: Channel[] = [
     name: 'Paramount Network',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Paramount_Network.svg/960px-Paramount_Network.svg.png',
     category: 'Spain',
-    url: 'https://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/v2/stitch/hls/channel/68d566603d3a9580eb461251/master.m3u8?advertisingId=&appName=web&appVersion=7.9.0-a9cca6b89aea4dc0998b92a51989d2adb9a9025d&app_name=web&clientDeviceType=0&clientID=your_unique_uuid_here&clientModelNumber=1.0.0&country=ES&deviceDNT=false&deviceId=your_unique_uuid_here&deviceLat=40.4200&deviceLon=-3.6800&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=16.2.0&marketingRegion=ES&serverSideAds=true&sessionID=8049f110-1949-11f1-8e13-429fdea1f0c4&sid=8049f110-1949-11f1-8e13-429fdea1f0c4&userId=&jwt=eyJhbGciOiJIUzI1NiIsImtpZCI6ImJiYTFiNmY1LWZlOTktNGEzNS04YTZjLWY2ZThhOWQyOWM2YyIsInR5cCI6IkpXVCJ9.eyJzZXNzaW9uSUQiOiI4MDQ5ZjExMC0xOTQ5LTExZjEtOGUxMy00MjlmZGVhMWYwYzQiLCJjbGllbnRJUCI6IjgyLjk4LjEzNC4xMCIsImNpdHkiOiJNYWRyaWQiLCJwb3N0YWxDb2RlIjoiMjgwMDEiLCJjb3VudHJ5IjoiRVMiLCJkbWEiOjAsImFjdGl2ZVJlZ2lvbiI6IkVTIiwiZGV2aWNlTGF0Ijo0MC40MTk5OTgxNjg5NDUzMSwiZGV2aWNlTG9uIjotMy42ODAwMDAwNjY3NTcyMDIsInByZWZlcnJlZExhbmd1YWdlIjoiZW4iLCJkZXZpY2VUeXBlIjoid2ViIiwiZGV2aWNlVmVyc2lvbiI6IjE2LjIuMCIsImRldmljZU1ha2UiOiJDaHJvbWUiLCJkZXZpY2VNb2RlbCI6IndlYiIsImFwcE5hbWUiOiJ3ZWIiLCJhcHBWZXJzaW9uIjoiNy45LjAtYTljY2E2Yjg5YWVhNGRjMDk5OGI5MmE1MTk4OWQyYWRiOWE5MDI1ZCIsImNsaWVudElEIjoieW91cl91bmlxdWVfdXVpZF9oZXJlIiwiY21BdWRpZW5jZUlEIjoiIiwiaXNDbGllbnRETlQiOmZhbHNlLCJ1c2VySUQiOiIiLCJsb2dMZXZlbCI6IkRFRkFVTFQiLCJ0aW1lWm9uZSI6IkV1cm9wZS9NYWRyaWQiLCJzZXJ2ZXJTaWRlQWRzIjp0cnVlLCJlMmVCZWFjb25zIjpmYWxzZSwiZmVhdHVyZXMiOnsibXVsdGlQb2RBZHMiOnsiY29ob3J0IjoiIiwiZW5hYmxlZCI6dHJ1ZX0sInN0aXRjaGVySGxzTmciOnsiZGVtdXhlZEF1ZGlvIjoiaml0In19LCJmbXNQYXJhbXMiOnsiZndWY0lEMiI6InlvdXJfdW5pcXVlX3V1aWRfaGVyZSIsImZ3VmNJRDJDb3BwYSI6InlvdXJfdW5pcXVlX3V1aWRfaGVyZSIsImN1c3RvbVBhcmFtcyI6eyJmbXNfbGl2ZXJhbXBfaWRsIjoiIiwiZm1zX2VtYWlsaGFzaCI6IiIsImZtc19zdWJzY3JpYmVyaWQiOiIiLCJmbXNfaWZhIjoiIiwiZm1zX2lkZnYiOiIiLCJmbXNfdXNlcmlkIjoieW91cl91bmlxdWVfdXVpZF9oZXJlIiwiZm1zX3ZjaWQydHlwZSI6InVzZXJpZCIsImZtc19yYW1wX2lkIjoiIiwiZm1zX2hoX3JhbXBfaWQiOiIiLCJmbXNfYmlkaWR0eXBlIjoiIiwiX2Z3XzNQX1VJRCI6IiIsImZtc19ydWxlaWQiOiIxMDAxNiwxMDAyMCwxMDAyMSwxMDAyMywxMDAwMCwxMDAxMywxMDAxNCwxMDAxNSwxMDAwOSJ9fSwic2Vzc2lvblN0YXJ0VGltZSI6MTc3Mjc5Mzg5MDA4MywiaXNzIjoiYm9vdC5wbHV0by50diIsInN1YiI6InByaTp2MTpwbHV0bzpkZXZpY2VzOkVTOmVXOTFjbDkxYm1seGRXVmZkWFZwWkY5b1pYSmwiLCJhdWQiOiIqLnBsdXRvLnR2IiwiZXhwIjoxNzcyODgwMjkwLCJpYXQiOjE3NzI3OTM4OTAsImp0aSI6IjNiZWVkMDAxLWU2NjItNDNiNi04NWZlLWVhMzE5OTg2MmU4MCJ9.0jQ6ObCwr16FiYHRSJnXZ_yHrcorUspzyPEPPITkCjI&masterJWTPassthrough=true',
+    url: 'https://jmp2.uk/plu-68d566603d3a9580eb461251.m3u8',
   },
   {
     id: 'Euronews.es',
@@ -487,16 +487,24 @@ export const channels: Channel[] = [
     id: 'gol.es',
     name: 'GOL TV',
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Gol.svg/960px-Gol.svg.png',
-    category: 'Fútbol',
+    category: 'Fotball',
     url: 'http://23.237.104.106:8080/USA_GOLTV/index.m3u8',
   },
   {
     id: 'gol-classics.es',
     name: 'GOL Classics',
     logo: 'https://github.com/Ignac16/Iptv-spain-m3u-1416/blob/main/assets/gol_classics.png?raw=true',
-    category: 'Fútbol',
+    category: 'Fotball',
     url: 'https://d71gqtnep83vb.cloudfront.net/gol_classics/gol_classics.m3u8',
   },
+   {
+    id: 'fifaplus.es',
+    name: 'Fifa+',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/FIFA%2B_(2025).svg/960px-FIFA%2B_(2025).svg.png',
+    category: 'Football',
+    url: 'https://d63fabad.wurl.com/manifest/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWVzX0ZJRkFQbHVzU3BhbmlzaF9ITFM/475815a2-3b11-4247-acdb-f76176329101/2.m3u8',
+  },
+];
 ];
 
 export const getChannelsByCategory = (): Record<string, Channel[]> => {
